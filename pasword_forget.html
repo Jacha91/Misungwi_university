@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - Misungwi University</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .forgot-password-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .forgot-password-container img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        
+        .forgot-password-container h2 {
+            color: #004080;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .forgot-password-container p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .forgot-password-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        
+        .forgot-password-container button {
+            padding: 12px 24px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .forgot-password-container button:hover {
+            background-color: #e55a50;
+        }
+        
+        .forgot-password-container a {
+            text-decoration: none;
+            color: #004080;
+            font-weight: bold;
+        }
+        
+        .forgot-password-container a:hover {
+            color: #e55a50;
+        }
+        /* Media Queries for responsiveness */
+        
+        @media screen and (max-width: 768px) {
+            .forgot-password-container {
+                padding: 30px;
+            }
+            .forgot-password-container h2 {
+                font-size: 1.8rem;
+            }
+            .forgot-password-container input,
+            .forgot-password-container button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Forgot Password Form -->
+    <div class="forgot-password-container">
+        <img src="C:\Users\hp\Desktop\WEB\IMAGE.jpeg" alt="Misungwi University Logo">
+        <h2>Forgot Password</h2>
+        <p>Enter your email or phone number to reset your password.</p>
+        <form id="forgot-password-form">
+            <input type="text" id="identifier" name="identifier" placeholder="Email or Phone Number" required>
+            <button type="submit">Reset Password</button>
+        </form>
+        <p>Remember your password? <a href="login.html">Login Here</a>
+    </div>
+
+    <script>
+        // JavaScript for form submission
+        document.getElementById('forgot-password-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const identifier = document.getElementById('identifier').value.trim();
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phonePattern = /^\d{10}$/;
+
+            if (!identifier) {
+                alert('Please enter your email or phone number.');
+                return;
+            }
+
+            if (!emailPattern.test(identifier) && !phonePattern.test(identifier)) {
+                alert('Please enter a valid email or a 10-digit phone number.');
+                return;
+            }
+
+            alert('A password reset link has been sent to your email.');
+            window.location.href = 'login.html';
+        });
+    </script>
+
+</body>
+
+</html>

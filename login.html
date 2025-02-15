@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Misungwi University</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .login-container img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        
+        .login-container h2 {
+            color: #004080;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        
+        .login-container input[type="submit"] {
+            background-color: #004080;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .login-container input[type="submit"]:hover {
+            background-color: #e55a50;
+        }
+        
+        .login-container p {
+            font-size: 0.9rem;
+        }
+        
+        .login-container a {
+            text-decoration: none;
+            color: #004080;
+            font-weight: bold;
+        }
+        
+        .login-container a:hover {
+            color: #e55a50;
+        }
+        /* Media Queries for responsiveness */
+        
+        @media screen and (max-width: 768px) {
+            .login-container {
+                padding: 30px;
+            }
+            .login-container h2 {
+                font-size: 1.8rem;
+            }
+            .login-container input {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <img src="C:\Users\hp\Desktop\WEB\IMAGE.jpeg" alt="Misungwi University Logo">
+        <h2>Misungwi University</h2>
+        <form id="login-form">
+            <input type="text" id="identifier" name="identifier" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+        <p><a href="pasword_forget.html">Forgot Password?</a></p>
+    </div>
+
+    <script>
+        // JavaScript for login form validation
+        document.getElementById('login_form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const identifier = document.getElementById('identifier').value.trim();
+            const password = document.getElementById('password').value;
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phonePattern = /^\d{10}$/;
+
+            if (!identifier || !password) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            if (!emailPattern.test(identifier) && !phonePattern.test(identifier)) {
+                alert('Please enter a valid email or a 10-digit phone number.');
+                return;
+            }
+
+            alert('Login successful! Redirecting...');
+            window.location.href = 'misungwi_university.html';
+        });
+    </script>
+
+</body>
+
+</html>

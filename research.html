@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misungwi University Research</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f3f3;
+        }
+        
+        .header {
+            background-color: #003f7f;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            background-color: #ddd;
+            padding: 10px 20px;
+        }
+        
+        .nav-bar img {
+            height: 80px;
+            margin-right: 20px;
+            border: 2px solid #003f7f;
+        }
+        
+        .nav-bar .nav-buttons button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background-color: #003f7f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .nav-bar .nav-buttons button:hover {
+            background-color: #002f5f;
+        }
+        
+        .sidebar {
+            width: 200px;
+            float: left;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #003f7f;
+            font-weight: bold;
+            border: 1px solid #003f7f;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .sidebar a:hover {
+            background-color: #003f7f;
+            color: #fff;
+        }
+        
+        .content {
+            margin-left: 250px;
+            margin-top: 20px;
+            padding: 20px;
+            color: #333;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+        }
+        
+        .research-info {
+            margin-top: 20px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        .research-form {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .research-form input,
+        .research-form textarea {
+            padding: 10px;
+            border: 1px solid #003f7f;
+            border-radius: 5px;
+            font-size: 1em;
+            resize: vertical;
+        }
+        
+        .research-form button {
+            padding: 12px;
+            border: none;
+            background-color: #003f7f;
+            color: #fff;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .research-form button:hover {
+            background-color: #002f5f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">Misungwi University</div>
+
+    <div class="nav-bar">
+        <img src="logo.png" alt="Misungwi University Logo">
+        <div class="nav-buttons">
+            <div class="nav-buttons">
+                <button onclick="location.href='index.html'">Home</button>
+                <button onclick="location.href='about us.html'">About us</button>
+                <button onclick="location.href='admission.html'">Admissions</button>
+                <button onclick="location.href='programs.html'">Programs</button>
+                <button onclick="location.href='contact.html'">Contact</button>
+                <button onclick="location.href='academics.html'">Academics</button>
+                <button onclick="location.href='derpartiment.html'">Departments</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <a href="student_portal.html">Student Portal</a>
+        <a href="library.html">Library</a>
+        <a href="e-learning.html">E-Learning</a>
+        <a href="research.html">Research</a>
+        <a href="alumn.html">Alumni</a>
+    </div>
+    <div class="content">
+        <h2>Research and Innovation</h2>
+        <div class="research-info">
+            <p>Misungwi University is committed to advancing knowledge through innovative research and development. Our research initiatives cover diverse fields, contributing to societal growth and technological advancements.</p>
+            <p>We support students and staff in conducting impactful research that addresses global challenges, fostering collaborations with institutions and industries worldwide.</p>
+        </div>
+
+        <div class="research-form">
+            <input type="text" placeholder="Research Title" required>
+            <textarea placeholder="Research Description" rows="5" required></textarea>
+            <input type="text" placeholder="Lead Researcher's Name" required>
+            <button type="submit">Submit Research Proposal</button>
+        </div>
+    </div>
+</body>
+
+</html>

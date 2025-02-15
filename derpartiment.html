@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments - Misungwi University</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        header {
+            background: #004080;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            padding: 10px;
+            background: #004080;
+            color: white;
+            border-radius: 5px;
+        }
+        
+        nav {
+            background: #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #004080;
+            font-weight: bold;
+        }
+        
+        h2 {
+            color: #004080;
+            text-align: center;
+        }
+        
+        .department-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .department-item {
+            background: #f2f2f2;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        
+        .department-item:hover {
+            background: #004080;
+            color: white;
+        }
+        
+        .department-item h3 {
+            margin: 0;
+            color: #004080;
+        }
+        
+        .department-item p {
+            margin: 5px 0;
+        }
+        
+        .footer {
+            background: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Departments at Misungwi University</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="admission.html">Admissions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="campus_life.html">Campus Life</a></li>
+                <li><a href="tution_fees.html">Tuition Fees</a></li>
+            </ul>
+        </nav>
+
+        <h2>Explore Our Academic Departments</h2>
+
+        <ul class="department-list">
+            <!-- Department 1 -->
+            <li class="department-item">
+                <h3>Department of Computer Science</h3>
+                <p>Offering cutting-edge programs in software engineering, artificial intelligence, and computer systems.</p>
+                <p>Programs:
+                    <ul>
+                        <li>Bachelor of Science in Computer Science</li>
+                        <li>Master of Science in Computer Science</li>
+                    </ul>
+                </p>
+            </li>
+
+            <!-- Department 2 -->
+            <li class="department-item">
+                <h3>Department of Business Administration</h3>
+                <p>Providing a strong foundation in business principles, management, and entrepreneurship.</p>
+                <p>Programs:
+                    <ul>
+                        <li>Bachelor of Business Administration</li>
+                        <li>Master of Business Administration (MBA)</li>
+                    </ul>
+                </p>
+            </li>
+
+            <!-- Department 3 -->
+            <li class="department-item">
+                <h3>Department of Law</h3>
+                <p>Equipping students with knowledge in international law, human rights, and legal theory.</p>
+                <p>Programs:
+                    <ul>
+                        <li>Bachelor of Law (LLB)</li>
+                        <li>Master of Law (LLM)</li>
+                    </ul>
+                </p>
+            </li>
+
+            <!-- Department 4 -->
+            <li class="department-item">
+                <h3>Department of Education</h3>
+                <p>Training future educators with programs in teaching methodologies and educational leadership.</p>
+                <p>Programs:
+                    <ul>
+                        <li>Bachelor of Arts in Education</li>
+                        <li>Master of Education</li>
+                    </ul>
+                </p>
+            </li>
+
+            <!-- Department 5 -->
+            <li class="department-item">
+                <h3>Department of Environmental Science</h3>
+                <p>Focusing on sustainable development, environmental policies, and climate change science.</p>
+                <p>Programs:
+                    <ul>
+                        <li>Bachelor of Science in Environmental Science</li>
+                        <li>Master of Science in Environmental Science</li>
+                    </ul>
+                </p>
+            </li>
+
+            <!-- Department 6 -->
+            <li class="department-item">
+                <h3>Department of Medicine</h3>
+                <p>Training healthcare professionals in various fields of medical sciences and clinical practices.</p>
+                <p>Programs:
+                    <ul>
+                        <li>Bachelor of Medicine and Surgery (MBBS)</li>
+                    </ul>
+                </p>
+            </li>
+
+            <!-- Department 7 -->
+            <li class="department-item">
+                <h3>Department of Engineering</h3>
+                <p>Providing programs in civil engineering, electrical engineering, and mechanical engineering.</p>
+                <p>Programs:
+                    <ul>
+                        <li>Bachelor of Science in Civil Engineering</li>
+                        <li>Bachelor of Science in Electrical Engineering</li>
+                    </ul>
+                </p>
+            </li>
+
+            <!-- Department 8 -->
+            <li class="department-item">
+                <h3>Department of Journalism and Mass Communication</h3>
+                <p>Empowering students with skills in media production, journalism, and communication strategies.</p>
+                <p>Programs:
+                    <ul>
+                        <li>Bachelor of Journalism and Mass Communication</li>
+                        <li>Master of Journalism and Mass Communication</li>
+                    </ul>
+                </p>
+            </li>
+
+            <!-- Department 9 -->
+            <li class="department-item">
+                <h3>Department of Economics</h3>
+                <p>Focusing on economics theory, policy analysis, and global financial systems.</p>
+                <p>Programs:
+                    <ul>
+                        <li>Bachelor of Science in Economics</li>
+                        <li>Master of Science in Economics</li>
+                    </ul>
+                </p>
+            </li>
+        </ul>
+
+        <footer class="footer">
+            <p>&copy; 2025 Misungwi University. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

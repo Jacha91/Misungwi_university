@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Misungwi University</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Ensure CSS exists -->
+    <style>
+        /* General styling */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        /* Container */
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #004080;
+            margin-bottom: 20px;
+        }
+        /* Form styling */
+        
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        input[type="submit"] {
+            background: #004080;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        input[type="submit"]:hover {
+            background: #002d5a;
+        }
+        
+        p {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        
+        p a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Register</h2>
+        <form action="" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+
+</body>
+
+</html>

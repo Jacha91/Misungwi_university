@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register -misungwi university</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .register-container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #004080;
+            /* Blue for heading */
+            margin-bottom: 1rem;
+        }
+        
+        input,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        
+        input:focus,
+        select:focus {
+            border-color: #004080;
+            /* Blue on focus */
+            outline: none;
+        }
+        
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #004080;
+            /* Blue for button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background: #d91e36;
+            /* Red for hover */
+        }
+        
+        .error {
+            color: #d91e36;
+            /* Red for error messages */
+            font-size: 0.9rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Register for Misungwi university</h2>
+        <form id="register-form">
+            <input type="text" id="full-name" placeholder="Full Name" required>
+            <span class="error" id="name-error">Enter a valid name.</span>
+
+            <input type="text" id="reg-number" placeholder="BCS-00-0000-0000" required>
+            <span class="error" id="reg-error">Invalid registration format.</span>
+
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <input type="text" id="contact" placeholder="Email or Phone Number" required>
+            <span class="error" id="contact-error">Enter a valid email or phone number.</span>
+
+            <select id="region">
+                <option value="">Select Region</option>
+                
+            </select>
+
+            <select id="district">
+                <option value="">Select District</option>
+            </select>
+
+            <input type="password" id="password" placeholder="Password" required>
+            <span class="error" id="password-error">Password must be 8+ chars, 1 number & special character.</span>
+
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <span class="error" id="confirm-password-error">Passwords do not match.</span>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Dummy data for regions & districts
+            const regions = {
+                "Dar es salaam": ["Ubungo", "Kigamboni", "Temeke", "Ilala", "Kinondoni"],
+                "Dodoma": ["Dodoma Mjini", "Kondoa", "Kongwa", "Chemba", "Chamwino"],
+                "Kagera": ["Bukoba", "Muleba", "Biharamuro", "Ngara", "Karagwe"],
+                "Mtwara": ["Masasi", "Newala", "Tandahimba", "Nanyamba", "Mtwara mjini"]
+            };
+
+            // Populate region dropdown
+            $.each(regions, function(key) {
+                $('#region').append(`<option value="${key}">${key}</option>`);
+            });
+
+            // Update district dropdown based on region selection
+            $('#region').change(function() {
+                let selectedRegion = $(this).val();
+                $('#district').empty().append('<option value="">Select District</option>');
+                if (regions[selectedRegion]) {
+                    $.each(regions[selectedRegion], function(index, value) {
+                        $('#district').append(`<option value="${value}">${value}</option>`);
+                    });
+                }
+            });
+
+            $('#register-form').submit(function(event) {
+                event.preventDefault();
+                let isValid = true;
+                $('.error').hide();
+
+                // Name validation
+                if ($('#full-name').val().length < 3) {
+                    $('#name-error').show();
+                    isValid = false;
+                }
+
+                // Registration number validation
+                const regPattern = /^BCS-\d{2}-\d{4}-\d{4}$/;
+                if (!regPattern.test($('#reg-number').val())) {
+                    $('#reg-error').show();
+                    isValid = false;
+                }
+
+                // Email or phone validation
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const phonePattern = /^\d{10}$/;
+                let contactVal = $('#contact').val();
+                if (!emailPattern.test(contactVal) && !phonePattern.test(contactVal)) {
+                    $('#contact-error').show();
+                    isValid = false;
+                }
+
+                // Password validation
+                const password = $('#password').val();
+                if (!/(?=.*\d)(?=.*[!@#$%^&*]).{8,}/.test(password)) {
+                    $('#password-error').show();
+                    isValid = false;
+                }
+
+                if (password !== $('#confirm-password').val()) {
+                    $('#confirm-password-error').show();
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    alert('Registration Successful!');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
